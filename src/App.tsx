@@ -1,5 +1,11 @@
+import SearchAutoComplete from "./components/search-autocomplete";
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div>
+      <SearchAutoComplete />
+    </div>
+  );
 };
 
 export default App;

@@ -1,73 +1,110 @@
-# React + TypeScript + Vite
+# 🔍 Search Autocomplete Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional, high-performance search autocomplete feature built with **React 19**, **TypeScript**, and **Tailwind CSS**. This component fetches user data from an external API, provides real-time filtering, and ensures a seamless user experience with loading states and error handling.
 
-Currently, two official plugins are available:
+![Preview](./public/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## React Compiler
+Check out the live demo here: [Live Link](https://react-seacrh-autocomplete-feature.pages.dev/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- ⚡ **Real-time Filtering**: Instantly filters results as you type.
+- 🔄 **Fetch Optimization**: Uses `AbortController` to cancel pending requests on component unmount or rapid re-renders.
+- 🎨 **Modern UI**: Styled with **Tailwind CSS** and **Shadcn UI** for a premium look and feel.
+- 📱 **Fully Responsive**: Optimized for all screen sizes.
+- 🛠️ **Type Safe**: Fully written in **TypeScript** for robust development.
+- ⏳ **Loading & Error States**: Gracefully handles network delays and API failures.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Built With
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS**
+- **Lucide React** (Icons)
+- **Shadcn UI** (Components)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🏁 Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+
+- Node.js (Latest LTS recommended)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/yehiaaly/react-seacrh-autocomplete-feature.git
+   ```
+
+2. **Navigate to the project directory**:
+
+   ```bash
+   cd react-seacrh-autocomplete-feature
+   ```
+
+3. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+## 📖 Documentation
+
+### Usage Example
+
+To use the `SearchAutoComplete` component in your project, simply import and render it:
+
+```tsx
+import SearchAutoComplete from "./components/search-autocomplete";
+
+const App = () => {
+  return (
+    <div className="min-h-screen bg-gray-100 p-8">
+      <SearchAutoComplete />
+    </div>
+  );
+};
+
+export default App;
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/
+|   App.css
+|   App.tsx
+|   index.css
+|   main.tsx
+|
++---components
+|   +---search-autocomplete
+|   |       index.tsx
+|   |
+|   \---ui
+|           button.tsx
+|           card.tsx
+|           input.tsx
+|           item.tsx
+|           separator.tsx
+|           spinner.tsx
+|
++---lib
+|       utils.ts
+|
+\---types
+        users.ts
 ```
+
+---
+
+Developed with ❤️ by [Yehia Aly](https://github.com/yehiaaly)
