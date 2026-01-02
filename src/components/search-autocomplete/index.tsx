@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { useCallback, useEffect, useState } from "react";
 import type { Users } from "@/types/users";
 import { Input } from "../ui/input";
-import { Item, ItemContent, ItemMedia, ItemTitle } from "../ui/item";
+import { Item, ItemContent, ItemGroup, ItemMedia, ItemTitle } from "../ui/item";
 import { Spinner } from "../ui/spinner";
 
 const SearchAutoComplete = () => {
@@ -66,17 +66,17 @@ const SearchAutoComplete = () => {
   const noResultsFound = searchInput !== "" && filteredUsers.length === 0;
 
   return (
-    <div className="flex min-h-screen justify-center bg-gray-300">
-      <Card className="my-6 flex w-md flex-col gap-2 border-none bg-gray-200 shadow-xl">
+    <div className="flex max-h-screen justify-center">
+      <Card className="my-6 flex max-h-screen w-md flex-col gap-2 border-none bg-gray-200 shadow-xl">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-2xl">
             <Search className="text-primary h-6 w-6" />
             Search Users
           </CardTitle>
         </CardHeader>
-        <CardContent className="">
+        <CardContent className="flex flex-1 flex-col overflow-hidden">
           <Input
-            className="hover:shadow-md"
+            className="my-2 hover:shadow-md"
             type="text"
             placeholder="search users"
             onChange={(e) => setSearchInput(e.target.value)}
@@ -104,7 +104,7 @@ const SearchAutoComplete = () => {
               <ItemTitle>No users found matching "{searchInput}"</ItemTitle>
             </Item>
           ) : (
-            <Item className="my-4 h-auto max-h-screen overflow-y-auto pr-2">
+            <ItemGroup className="my-4 flex-1 overflow-y-auto pr-2">
               <ItemContent className="flex flex-col gap-1">
                 {usersToDisplay?.map((user) => (
                   <Item
@@ -118,7 +118,7 @@ const SearchAutoComplete = () => {
                   </Item>
                 ))}
               </ItemContent>
-            </Item>
+            </ItemGroup>
           )}
         </CardContent>
       </Card>
